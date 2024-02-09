@@ -1,0 +1,55 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #1d1f20; /* Light grey background */
+}
+.container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #8c8273;
+    box-sizing: border-box;
+    background-color: #181a1b; /* White background for the container */
+}
+select, .send button {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #656565;
+    box-sizing: border-box;
+    background-color: #3b3b3b;
+    color: #c7c7c7;
+}
+.send input {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #656565;
+    box-sizing: border-box;
+    width: 70%; /* Adjust this value as needed for the desired width */
+    background-color: #3b3b3b;
+    color: #c7c7c7;
+}
+
+.messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto; /* Allows scrolling within the message area */
+    border-top: 1px solid #c7c7c7;
+    border-bottom: 1px solid #c7c7c7;
+}
+.message {
+    color: #c7c7c7;
+    margin-bottom: 5px; /* Adds spacing between messages */
+}
+.message:last-child, .message:nth-last-child(2), .message:nth-last-child(3), .message:nth-last-child(4), .message:nth-last-child(5) {
+    color: #FF0000; /* Adjust the color as needed */
+}
+.send {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+

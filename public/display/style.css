@@ -1,0 +1,27 @@
+/* 🐙 Body styling for black background, white text, and using a readable font 🐙 */
+body {
+    background-color: black;
+    color: white;
+    font-size: 6em; /* Increase font size for better readability */
+    font-family: Arial, Helvetica, sans-serif; /* Readable font */
+    line-height: 1; /* Adjust line spacing to fit large text */
+    margin: 0;
+    padding: 40px; /* Increase padding for better spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+/* 🐙 Style messages to center content and manage spacing 🐙 */
+.message {
+    flex: 1;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: left; /* Center horizontally */
+    padding: 20px; /* Increase padding for each message */
+    margin: 10px 0; /* Increase margin for spacing between messages */
+    word-wrap: break-word; /* Ensure text wraps within container */
+    max-height: 20%; /* Ensure each message does not exceed 20% of the viewport height */
+}
+

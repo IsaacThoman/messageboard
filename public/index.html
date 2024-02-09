@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<body>
+
+<div class="container">
+    <select id="roomSelector">
+        <option>display-1</option>
+        <!-- Add your options here -->
+    </select>
+
+    <div class="messages">
+        <!-- Repeat the message div as needed -->
+
+
+    </div>
+
+    <div class="send">
+        <input type="text" placeholder="Type message here">
+        <button id="sendBtn">Send</button>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
