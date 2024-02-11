@@ -10,6 +10,15 @@ let messages = {};
 
 // 🐙 Add an event listener to the send button for click events
 sendButton.addEventListener('click', function() {
+sendButtonPressed();
+});
+
+inputField.addEventListener('keyup', function(event){
+    if(event.key === 'Enter')
+        sendButtonPressed();
+});
+
+function sendButtonPressed(){
     // 🐙 Retrieve the value from the input field
     let msgToSend = inputField.value.trim();
     let timestamp = new Date().toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
@@ -25,7 +34,9 @@ sendButton.addEventListener('click', function() {
         // 🐙 Optional: Scroll to the bottom of the messages div
 
     }
-});
+}
+
+
 
 roomSelector.addEventListener('change', function(){
 //console.log();

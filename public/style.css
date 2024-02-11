@@ -31,6 +31,7 @@ select, .send button {
     width: 70%; /* Adjust this value as needed for the desired width */
     background-color: #3b3b3b;
     color: #c7c7c7;
+    font-size: 16px;
 }
 
 .messages {
