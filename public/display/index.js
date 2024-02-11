@@ -25,6 +25,14 @@ function updateMessages(){
 scrollToBottom()
 }
 
+function appendMessage(msg){
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'message';
+    messageDiv.textContent = msg;
+    messagesDiv.appendChild(messageDiv);
+}
+
+
 function scrollToBottom(){
     //scroll to bottom of entire screen
     window.scrollTo(0,document.body.scrollHeight);
@@ -42,3 +50,38 @@ socket.on('message', (msg) => {
         messages[msg.room].shift();
 
 });
+
+socket.on('roomUpdate', (rooms) => {
+    clearMessages();
+    if(rooms.includes(myRoom))
+        appendMessage('🐙 '+myRoom);
+    else
+        appendMessage('🦑 '+myRoom +' does not exist on server');
+});
+
+
+// 🐙 Check if the Wake Lock API is supported
+if ('wakeLock' in navigator) {
+    let wakeLock = null;
+
+    const requestWakeLock = async () => {
+        try {
+            // 🐙 Request a screen wake lock
+            wakeLock = await navigator.wakeLock.request('screen');
+            console.log('Screen Wake Lock is active.');
+
+            // 🐙 Listen for the release event
+            wakeLock.addEventListener('release', () => {
+                console.log('Screen Wake Lock was released');
+            });
+        } catch (err) {
+            console.error(`${err.name}, ${err.message}`);
+        }
+    };
+
+    // 🐙 Call the function to request the Wake Lock
+    requestWakeLock();
+
+} else {
+    console.log('Screen Wake Lock API is not supported in this browser.');
+}

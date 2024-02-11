@@ -23,7 +23,7 @@ sendButton.addEventListener('click', function() {
         inputField.value = '';
 
         // 🐙 Optional: Scroll to the bottom of the messages div
-        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
     }
 });
 
@@ -43,6 +43,7 @@ function updateMessages(){
         messageDiv.textContent = messages[roomSelector.value][i];
         messagesDiv.appendChild(messageDiv);
     }
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
 

@@ -10,13 +10,13 @@ const messages = {};
 app.use(express.static('public'));
 
 io.on('connection', (socket) => {
-   // console.log('a user connected');
+    console.log('a user connected');
 
-    socket.emit('roomUpdate', ['Station 1','Station 2']);
+    socket.emit('roomUpdate', ['Mill A','Mill B','Mill C','Mill D','Mill E','Mill F']);
 
 
     socket.on('disconnect', () => {
-       // console.log('user disconnected');
+        console.log('user disconnected');
     });
 
     socket.on('message', (msg) => {
