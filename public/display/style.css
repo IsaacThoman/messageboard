@@ -12,6 +12,11 @@ body {
     justify-content: space-between;
 
 }
+/* Hide the cursor on the entire app */
+body, html {
+    cursor: none;
+}
+
 
 /* 🐙 Style messages to center content and manage spacing 🐙 */
 .message {
