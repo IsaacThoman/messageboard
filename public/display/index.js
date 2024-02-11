@@ -14,14 +14,14 @@ function clearMessages(){
 
 function updateMessages(){
     clearMessages();
-    if(!(myRoom in messages))
+    if(!(myRoom in messages)){
+        appendMessage('🦑 '+myRoom +' does not exist on server');
         return;
-    for(let i in messages[myRoom]){
-        const messageDiv = document.createElement('div');
-        messageDiv.className = 'message';
-        messageDiv.textContent = messages[myRoom][i];
-        messagesDiv.appendChild(messageDiv);
     }
+
+    for(let i in messages[myRoom])
+        appendMessage(messages[myRoom][i])
+
 scrollToBottom()
 }
 
@@ -58,6 +58,12 @@ socket.on('roomUpdate', (rooms) => {
     else
         appendMessage('🦑 '+myRoom +' does not exist on server');
 });
+
+socket.on('messages', (msg) => {
+    messages = msg;
+    updateMessages();
+});
+
 
 
 // 🐙 Check if the Wake Lock API is supported

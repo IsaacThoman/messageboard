@@ -58,6 +58,11 @@ socket.on('message', (msg) => {
     updateMessages();
 });
 
+socket.on('messages', (msg) => {
+    messages = msg;
+    updateMessages();
+});
+
 socket.on('roomUpdate', (msg) => {
     //clear roomSelector
     while(roomSelector.firstChild)
