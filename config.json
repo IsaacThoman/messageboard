@@ -1,0 +1,4 @@
+{
+  "PORT":3000,
+  "ROOMS": ["Mill A","Mill B","Mill C","Mill D","Mill E","Mill F"]
+}

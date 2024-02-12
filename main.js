@@ -4,8 +4,9 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
+const config = require('./config.json');
 
-const roomNames = ['Mill A','Mill B','Mill C','Mill D','Mill E','Mill F'];
+const roomNames = config.ROOMS;
 
 const messages = {};
 
@@ -51,6 +52,6 @@ function cleanMessages(){
 
 }
 
-server.listen(3000, () => {
-    console.log('listening on *:3000');
+server.listen(config.PORT, () => {
+    console.log('listening on *:'+config.PORT);
 });
